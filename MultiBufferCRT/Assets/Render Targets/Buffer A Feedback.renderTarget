@@ -7,6 +7,6 @@
   AntialiasingMode: Disabled
   DepthBuffer: Auto
   MSAAStrategy: OnlyWhenRequired
-  ClearColorOption: BackgroundTexture
+  ClearColorOption: CustomTexture
   ClearColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
-  InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  InputTexture: !<reference> 5fcbf5a7-d4a6-4ef6-8908-fc1033db9dc4
