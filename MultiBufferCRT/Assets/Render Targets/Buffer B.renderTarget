@@ -1,0 +1,12 @@
+- !<RenderTarget/ecdd83bd-d92d-4937-9013-2e2fc0cc6ae0>
+  PackagePath: ""
+  UseScreenResolution: true
+  Resolution:
+    x: 900
+    y: 1600
+  AntialiasingMode: Disabled
+  DepthBuffer: Auto
+  MSAAStrategy: OnlyWhenRequired
+  ClearColorOption: BackgroundTexture
+  ClearColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+  InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
