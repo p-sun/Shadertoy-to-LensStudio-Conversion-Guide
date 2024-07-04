@@ -4,6 +4,7 @@
     - !<own> 3e7c2195-4744-4350-8fbf-f15a3dd72ded
     - !<own> cde6cb09-43b5-4680-b2ea-ecbb16fb38e3
     - !<own> 7ad2ef69-0c48-4acb-8040-713bce18b667
+    - !<own> 649e5e17-50d6-4ff9-aa74-33e897ed8e77
     - !<own> d9f5b1e1-83e3-44de-a964-c779489d9ded
     - !<own> 6055b6e7-4fd2-498e-9bb4-34d64d95ee5b
     - !<own> dac3f904-83e2-4eb3-9fdd-3ab52f623ab2
@@ -78,6 +79,18 @@
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
   InputTexture: !<reference> 996c6f4e-b2ad-4117-9e3e-3db82e6e97f5
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
+- !<Canvas/1408a16c-6bac-42b2-a10c-c5b9b81d4eb9>
+  PrefabRemaps:
+    []
+  Name: Canvas
+  Enabled: true
+  UnitType: Points
+  SortingType: Hierarchy
+  WorldSpaceRect:
+    left: -15.000000
+    bottom: -20.000000
+    right: 15.000000
+    top: 20.000000
 - !<ScreenRegionComponent/1f136b8e-e2ba-4cd4-84f3-441650f10a05>
   PrefabRemaps:
     []
@@ -391,6 +404,22 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/649e5e17-50d6-4ff9-aa74-33e897ed8e77>
+  PrefabRemaps:
+    []
+  Name: Buffer A Feedback
+  Enabled: true
+  Layers: 4
+  LocalTransform:
+    position: {x: -120.000000, y: 0.000000, z: 40.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 88478fc5-2915-47bb-8772-6ef19ba60a6b
+    - !<own> 1408a16c-6bac-42b2-a10c-c5b9b81d4eb9
 - !<Image/6c89cf82-4d9e-423d-adea-e9a8028f1126>
   PrefabRemaps:
     []
@@ -484,6 +513,35 @@
   Enabled: true
   ScreenRegionType: FullFrame
   ResizeWithKeyboard: false
+- !<Camera/88478fc5-2915-47bb-8772-6ef19ba60a6b>
+  PrefabRemaps:
+    []
+  Name: Camera
+  Enabled: true
+  renderLayer: 4
+  MipmapLevel: 0
+  RenderOrder: 1
+  Size: 20.000000
+  Near: -1.000000
+  Far: 200.000000
+  Fov: 63.541019
+  ClearColor:
+    mode: None
+    color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+  ClearDepth:
+    mode: Custom
+    value: 1.000000
+  Aspect: 1.000000
+  CameraType: Orthographic
+  DepthMode: Regular
+  DeviceProperty: All
+  AspectPreset: Custom
+  OitLayers: NoOit
+  RenderTarget: !<reference> 5e0ddf3c-f91d-4182-ac51-a30efd568467
+  DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
+  MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Camera/99865b25-56fe-4c14-8950-6baf11812228>
   PrefabRemaps:
     []
