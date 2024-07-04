@@ -12,6 +12,23 @@
   RenderPreviewOutput: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
   RenderOverlayOutput: !<reference> 00000000-0000-0000-0000-000000000000
   PhysicsRootWorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+- !<Image/01c445ff-e388-48e3-949a-cd10f616915f>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> bdfd371f-bcc5-41bd-a0f7-578fec60054a
+  FlipX: false
+  FlipY: false
+  Pivot: {x: 0.000000, y: 0.000000}
 - !<SceneObject/024ca5e8-cabe-4bd2-9cdf-2ee0a254c11f>
   PrefabRemaps:
     []
@@ -131,7 +148,7 @@
   PrefabRemaps:
     []
   Name: "2.1 - Galaxy - Fill, Normalize y from -1 to 1 (EASIEST)"
-  Enabled: true
+  Enabled: false
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -286,6 +303,22 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/4d27cb08-2b10-4887-8996-c8412f90e73a>
+  PrefabRemaps:
+    []
+  Name: 1.1 - Blue Circle Res - Normalize x from -1 to 1 with resolution 1
+  Enabled: false
+  Layers: 1048576
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 6fd22826-9a2a-4b9b-93df-dcdde486e9a3
+    - !<own> 01c445ff-e388-48e3-949a-cd10f616915f
 - !<SceneObject/50e9c397-4781-4a3e-97bb-ccf0552edd25>
   PrefabRemaps:
     []
@@ -414,6 +447,7 @@
     hasSegmentScaleCompensation: false
   Children:
     - !<own> be140248-11ea-4495-92dc-bbb37cf6be78
+    - !<own> 4d27cb08-2b10-4887-8996-c8412f90e73a
     - !<own> 50e9c397-4781-4a3e-97bb-ccf0552edd25
     - !<own> 1f7e44e6-c407-4061-8ff2-300a4b598feb
     - !<own> 5eb1645c-21df-41c0-9647-eaa2c474c14f
@@ -421,6 +455,39 @@
   Components:
     - !<own> 9f882640-9f3d-45cb-848a-798cfc3a41a6
     - !<own> 0a10bfc7-fdcd-4c84-a428-cb63776f76cd
+- !<ScreenTransform/6fd22826-9a2a-4b9b-93df-dcdde486e9a3>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<Image/79a2378b-9cd7-445e-98cf-c93ce6e9c41b>
   PrefabRemaps:
     []
@@ -550,7 +617,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> bdfd371f-bcc5-41bd-a0f7-578fec60054a
+    - !<reference> 1ab4b677-8a87-4428-aed6-c19487565f7f
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
@@ -590,8 +657,8 @@
 - !<SceneObject/be140248-11ea-4495-92dc-bbb37cf6be78>
   PrefabRemaps:
     []
-  Name: 1.1 - Blue Circle Res - Normalize x from -1 to 1 with resolution
-  Enabled: false
+  Name: 0.0 - Shadertoy New
+  Enabled: true
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
