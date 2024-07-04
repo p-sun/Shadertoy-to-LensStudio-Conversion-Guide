@@ -130,7 +130,7 @@
 - !<SceneObject/1f7e44e6-c407-4061-8ff2-300a4b598feb>
   PrefabRemaps:
     []
-  Name: 2.2 - Galaxy
+  Name: "2.1 - Galaxy - Fill, Normalize y from -1 to 1 (EASIEST)"
   Enabled: true
   Layers: 1048576
   LocalTransform:
@@ -240,7 +240,7 @@
 - !<SceneObject/4265b2f2-b64f-476f-a529-beea60a374c7>
   PrefabRemaps:
     []
-  Name: 2.3 - Glow Boxes
+  Name: "2.3 Glow Boxes - Stretch, Normalize x with resolution"
   Enabled: false
   Layers: 1048576
   LocalTransform:
@@ -289,7 +289,7 @@
 - !<SceneObject/50e9c397-4781-4a3e-97bb-ccf0552edd25>
   PrefabRemaps:
     []
-  Name: 1.2 - Normalize x from -1 to 1 with aspect
+  Name: 1.2 Blue Circle Aspect - Normalize x from -1 to 1 with aspect (EASY)
   Enabled: false
   Layers: 1048576
   LocalTransform:
@@ -320,7 +320,7 @@
 - !<SceneObject/5eb1645c-21df-41c0-9647-eaa2c474c14f>
   PrefabRemaps:
     []
-  Name: 2.1 - Plasma Globe
+  Name: "2.2 - Plasma Globe - Stretch, Normalize y with resolution"
   Enabled: false
   Layers: 1048576
   LocalTransform:
@@ -415,8 +415,8 @@
   Children:
     - !<own> be140248-11ea-4495-92dc-bbb37cf6be78
     - !<own> 50e9c397-4781-4a3e-97bb-ccf0552edd25
-    - !<own> 5eb1645c-21df-41c0-9647-eaa2c474c14f
     - !<own> 1f7e44e6-c407-4061-8ff2-300a4b598feb
+    - !<own> 5eb1645c-21df-41c0-9647-eaa2c474c14f
     - !<own> 4265b2f2-b64f-476f-a529-beea60a374c7
   Components:
     - !<own> 9f882640-9f3d-45cb-848a-798cfc3a41a6
@@ -590,7 +590,7 @@
 - !<SceneObject/be140248-11ea-4495-92dc-bbb37cf6be78>
   PrefabRemaps:
     []
-  Name: 1.1 - Normalize x from -1 to 1 with resolution
+  Name: 1.1 - Blue Circle Res - Normalize x from -1 to 1 with resolution
   Enabled: false
   Layers: 1048576
   LocalTransform:
