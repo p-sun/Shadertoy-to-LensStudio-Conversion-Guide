@@ -224,6 +224,39 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScreenTransform/31af180b-25a5-491a-b66d-151d6447f738>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<Camera/384fa7f9-6007-4a0c-b417-d24dd458dd81>
   PrefabRemaps:
     []
@@ -397,6 +430,8 @@
     scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
+    - !<own> 22cb52e8-571b-40a4-a2d2-15283945668c
+    - !<own> f37cb194-51df-45c3-b9f9-aa8462732ad2
     - !<own> 5eb1645c-21df-41c0-9647-eaa2c474c14f
   Components:
     - !<own> c08cc101-b5b2-4acc-987e-af4992f729c8
@@ -532,7 +567,6 @@
     - !<own> 4d27cb08-2b10-4887-8996-c8412f90e73a
     - !<own> 50e9c397-4781-4a3e-97bb-ccf0552edd25
     - !<own> 69a61529-274e-46aa-9ff0-896d8f8f6452
-    - !<own> 22cb52e8-571b-40a4-a2d2-15283945668c
   Components:
     - !<own> 9f882640-9f3d-45cb-848a-798cfc3a41a6
     - !<own> 0a10bfc7-fdcd-4c84-a428-cb63776f76cd
@@ -936,7 +970,7 @@
   PrefabRemaps:
     []
   Name: Lighting
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1033,6 +1067,23 @@
   DecayType: None
   DecayLimit: false
   DecayRange: 40.000000
+- !<Image/ecb53c33-e265-4e57-abb1-23c58d7e0e3e>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 4ec95194-8dd5-4c05-a851-ee82cafdd2da
+  FlipX: false
+  FlipY: false
+  Pivot: {x: 0.000000, y: 0.000000}
 - !<RetouchVisual/ed84e7be-e020-415a-82bd-ed64e170aa5f>
   PrefabRemaps:
     []
@@ -1236,6 +1287,22 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+- !<SceneObject/f37cb194-51df-45c3-b9f9-aa8462732ad2>
+  PrefabRemaps:
+    []
+  Name: 2.2 - Texual Fetch
+  Enabled: true
+  Layers: 1048576
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 31af180b-25a5-491a-b66d-151d6447f738
+    - !<own> ecb53c33-e265-4e57-abb1-23c58d7e0e3e
 - !<ScreenTransform/fbbe5fe3-2e2b-42a7-b95c-6e50f69ade23>
   PrefabRemaps:
     []
