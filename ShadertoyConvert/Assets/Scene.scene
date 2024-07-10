@@ -176,22 +176,6 @@
   Components:
     - !<own> 93fb20f7-55fe-4284-8b17-e096192d1497
     - !<own> 578a81e8-8265-4add-938b-29caf90b391e
-- !<SceneObject/25483d5a-e18a-4220-aa81-f66ce3b3fdf0>
-  PrefabRemaps:
-    []
-  Name: Lens Studio Techniques
-  Enabled: true
-  Layers: 1048576
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: -1.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 3559fa8f-32a8-48bf-ad0c-081fe051e845
-    - !<own> 3487ff1a-d1e1-459c-9aa6-525f44999c2c
 - !<SceneObject/27e0af83-40db-4ab6-a35d-2df06e1ae9e5>
   PrefabRemaps:
     []
@@ -273,46 +257,6 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
-- !<ScreenRegionComponent/3487ff1a-d1e1-459c-9aa6-525f44999c2c>
-  PrefabRemaps:
-    []
-  Name: Screen Region
-  Enabled: true
-  ScreenRegionType: FullFrame
-  ResizeWithKeyboard: false
-- !<ScreenTransform/3559fa8f-32a8-48bf-ad0c-081fe051e845>
-  PrefabRemaps:
-    []
-  Name: Screen Transform
-  Enabled: true
-  IsAdvanced: false
-  Constraints:
-    pinToLeft: false
-    pinToTop: false
-    pinToRight: false
-    pinToBottom: false
-    fixedWidth: false
-    fixedHeight: false
-    deactivatedFixedSprite: false
-    deactivatedFixedPivot: false
-  Pivot: {x: 0.000000, y: 0.000000}
-  Transform:
-    position: {x: 0.000000, y: 0.000000, z: -1.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  RawMode: true
-  ForceBasic: true
-  Anchor:
-    left: -1.000000
-    bottom: -1.000000
-    right: 1.000000
-    top: 1.000000
-  Offset:
-    left: 0.000000
-    bottom: 0.000000
-    right: 0.000000
-    top: 0.000000
 - !<Camera/384fa7f9-6007-4a0c-b417-d24dd458dd81>
   PrefabRemaps:
     []
@@ -363,7 +307,7 @@
   PrefabRemaps:
     []
   Name: 4.2 - Glow Boxes
-  Enabled: false
+  Enabled: true
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -873,7 +817,6 @@
     - !<own> 6b2c5127-a4e3-4b3f-aa6f-7830e83c27a1
     - !<own> 5ac60ecb-bb01-45e0-bc32-417692cf8ee4
     - !<own> bfbc16b2-7c7a-4a53-8cea-5965a4bc1279
-    - !<own> 25483d5a-e18a-4220-aa81-f66ce3b3fdf0
   Components:
     - !<own> 384fa7f9-6007-4a0c-b417-d24dd458dd81
     - !<own> 05f1baee-34e9-4071-88ef-95d114ec2147
@@ -1094,7 +1037,7 @@
   PrefabRemaps:
     []
   Name: 3.2 - Debug Float to Color
-  Enabled: true
+  Enabled: false
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}

@@ -1,8 +1,6 @@
 - !<Scene/0a1ccb1a-fe88-4fbb-9883-e3af3c75fd99>
   PackagePath: ""
   objects:
-    - !<own> 3e7c2195-4744-4350-8fbf-f15a3dd72ded
-    - !<own> cde6cb09-43b5-4680-b2ea-ecbb16fb38e3
     - !<own> 7ad2ef69-0c48-4acb-8040-713bce18b667
     - !<own> 649e5e17-50d6-4ff9-aa74-33e897ed8e77
     - !<own> d9f5b1e1-83e3-44de-a964-c779489d9ded
@@ -35,50 +33,6 @@
   RenderPreviewOutput: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
   RenderOverlayOutput: !<reference> 00000000-0000-0000-0000-000000000000
   PhysicsRootWorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-- !<SceneObject/04833dc7-4974-4ce0-a235-1053367cad8e>
-  PrefabRemaps:
-    []
-  Name: Light
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 40.000000, y: 85.000000, z: 20.000000}
-    rotation: {x: 70.000000, y: 10.000000, z: 150.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> e8f38b3a-ee8b-4c29-8c58-ad3f1ff97c37
-- !<Camera/0d09197f-b000-4f6a-a991-cd2cc87903f3>
-  PrefabRemaps:
-    []
-  Name: Camera
-  Enabled: true
-  renderLayer: 1
-  MipmapLevel: 0
-  RenderOrder: 0
-  Size: 20.000000
-  Near: 1.000000
-  Far: 1000.000000
-  Fov: 63.541019
-  ClearColor:
-    mode: None
-    color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-  ClearDepth:
-    mode: Custom
-    value: 1.000000
-  Aspect: 1.000000
-  CameraType: Perspective
-  DepthMode: Regular
-  DeviceProperty: All
-  AspectPreset: Custom
-  OitLayers: NoOit
-  RenderTarget: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
-  DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
-  MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  InputTexture: !<reference> 996c6f4e-b2ad-4117-9e3e-3db82e6e97f5
-  RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Canvas/1408a16c-6bac-42b2-a10c-c5b9b81d4eb9>
   PrefabRemaps:
     []
@@ -115,21 +69,6 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
-- !<SceneObject/27e0af83-40db-4ab6-a35d-2df06e1ae9e5>
-  PrefabRemaps:
-    []
-  Name: Envmap
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 65.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 60d75264-5511-4fdf-ae9b-cb4a70b91c54
 - !<SceneObject/27f1adce-70bc-43e0-a08b-93edaab8e54b>
   PrefabRemaps:
     []
@@ -208,21 +147,6 @@
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
   InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
-- !<SceneObject/3e7c2195-4744-4350-8fbf-f15a3dd72ded>
-  PrefabRemaps:
-    []
-  Name: Camera Object
-  Enabled: false
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 40.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 0d09197f-b000-4f6a-a991-cd2cc87903f3
 - !<SceneObject/3f89d880-c2f7-4ffa-b894-5338dc7995c0>
   PrefabRemaps:
     []
@@ -320,41 +244,6 @@
   Components:
     - !<own> f4dbbeb7-29b7-4e37-a06e-8a4e1ac92a04
     - !<own> 9d13eb4c-ae92-4b9a-a482-cc9441a42d00
-- !<LightSource/60d75264-5511-4fdf-ae9b-cb4a70b91c54>
-  PrefabRemaps:
-    []
-  Name: Light Source
-  Enabled: true
-  renderLayer: 1
-  LightType: EnvMap
-  Intensity: 1.000000
-  CastShadows: false
-  ShadowDensity: 1.000000
-  ShadowBlurRadius: 0.000000
-  ShadowTextureSize: 512
-  AutoLightSourcePosition: false
-  AutoShadowFrustumSize: false
-  AutoShadowFrustumSizeExtend: 2.000000
-  ShadowFrustumSize: 30.000000
-  ShadowFrustumNearClipPlane: 1.000000
-  ShadowFrustumFarClipPlane: 1000.000000
-  UseEnvMapFromCamera: false
-  EnvMapFromCameraMode: Auto
-  UseEstimation: false
-  EstimationIntensity: 1.000000
-  EstimationSharpness: 1.000000
-  EnvMapExposure: 1.000000
-  EnvMapRotation: 0.000000
-  DiffuseEnvTexture: !<reference> 2013a19b-93c1-4f21-b7ea-876a33550c7b
-  SpecularEnvTexture: !<reference> d795fd46-e16b-4cb9-8dfb-4ef227298f7a
-  Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-  DynamicEnvInputTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  InnerConeAngle: 0.000000
-  OuterConeAngle: 45.000000
-  DecayType: None
-  DecayLimit: false
-  DecayRange: 40.000000
 - !<SceneObject/60de2282-b495-4990-ace0-258e6da11f6e>
   PrefabRemaps:
     []
@@ -764,22 +653,6 @@
   Components:
     - !<own> 4f713df2-755e-4d5f-a90a-eef2222b17b4
     - !<own> 7e9d07a4-0b4b-4173-bca1-bdf50c58a102
-- !<SceneObject/cde6cb09-43b5-4680-b2ea-ecbb16fb38e3>
-  PrefabRemaps:
-    []
-  Name: Lighting
-  Enabled: false
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    - !<own> 27e0af83-40db-4ab6-a35d-2df06e1ae9e5
-    - !<own> 04833dc7-4974-4ce0-a235-1053367cad8e
-  Components:
-    []
 - !<SceneObject/ce965e6a-8020-4b26-bf98-f7863dc2a7d2>
   PrefabRemaps:
     []
@@ -880,41 +753,6 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
-- !<LightSource/e8f38b3a-ee8b-4c29-8c58-ad3f1ff97c37>
-  PrefabRemaps:
-    []
-  Name: Light Source
-  Enabled: true
-  renderLayer: 1
-  LightType: Directional
-  Intensity: 1.000000
-  CastShadows: false
-  ShadowDensity: 0.440000
-  ShadowBlurRadius: 4.000000
-  ShadowTextureSize: 512
-  AutoLightSourcePosition: true
-  AutoShadowFrustumSize: true
-  AutoShadowFrustumSizeExtend: 2.000000
-  ShadowFrustumSize: 30.000000
-  ShadowFrustumNearClipPlane: 1.000000
-  ShadowFrustumFarClipPlane: 1000.000000
-  UseEnvMapFromCamera: false
-  EnvMapFromCameraMode: Auto
-  UseEstimation: false
-  EstimationIntensity: 1.000000
-  EstimationSharpness: 1.000000
-  EnvMapExposure: 1.000000
-  EnvMapRotation: 0.000000
-  DiffuseEnvTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  SpecularEnvTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-  DynamicEnvInputTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  InnerConeAngle: 0.000000
-  OuterConeAngle: 45.000000
-  DecayType: None
-  DecayLimit: false
-  DecayRange: 40.000000
 - !<Canvas/ec02f7f5-3d14-4c85-8f55-1feb5bbf729f>
   PrefabRemaps:
     []
