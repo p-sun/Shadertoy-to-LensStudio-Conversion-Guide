@@ -13,7 +13,7 @@ viewConfig:
     viewport: Maximized
     output: Live
     stereoOutputEye: Center
-  cameraType: Front
+  cameraType: Back
 metaInfo:
   hints:
     []
