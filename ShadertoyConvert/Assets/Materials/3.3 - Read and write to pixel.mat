@@ -1,8 +1,8 @@
-- !<Material/327108b2-6101-40e6-8bdc-11f9a8c7f42a>
+- !<Material/4d9b3073-a59b-49e7-972f-5858274c7c2d>
   PackagePath: ""
   PassesInfo:
-    - !<own> 0779aa17-0e5f-4e32-890e-9cda587fb0ed
-- !<PassInfo/0779aa17-0e5f-4e32-890e-9cda587fb0ed>
+    - !<own> a0e4fc60-81d6-420d-a53b-7693c53a1fbd
+- !<PassInfo/a0e4fc60-81d6-420d-a53b-7693c53a1fbd>
   DepthWrite: false
   DepthTest: false
   DepthFunction: LessEqual
@@ -15,41 +15,38 @@
   InstanceCount: 1
   Defines:
     []
-  BlendMode: PremultipliedAlphaAuto
+  BlendMode: Disabled
   Properties:
-    Port_Input2_N003:
-      typeIdx: 1
-      value: 0.500000
     PreviewEnabled:
       typeIdx: 0
       value: 0
-    screenTexture:
+    Tweak_N1:
       typeIdx: 9
       value:
-        id: 996c6f4e-b2ad-4117-9e3e-3db82e6e97f5
+        id: bbf2d983-84fb-4bd1-9611-2763f9c578cd
         sampler:
-          filteringMode: Trilinear
-          wrapModeU: Repeat
-          wrapModeV: Repeat
+          filteringMode: Nearest
+          wrapModeU: ClampToBorderColor
+          wrapModeV: ClampToBorderColor
           wrapModeW: Repeat
           borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
           mipmaps: false
-    screenTextureBorderColor:
+    Tweak_N1BorderColor:
       typeIdx: 5
       value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    screenTextureDims:
+    Tweak_N1Dims:
       typeIdx: 5
       value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    screenTextureSize:
+    Tweak_N1Size:
       typeIdx: 5
       value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    screenTextureTransform:
+    Tweak_N1Transform:
       typeIdx: 7
       value:
         0: {x: 1.000000, y: 0.000000, z: 0.000000}
         1: {x: 0.000000, y: 1.000000, z: 0.000000}
         2: {x: 0.000000, y: 0.000000, z: 1.000000}
-    screenTextureUvMinMax:
+    Tweak_N1UvMinMax:
       typeIdx: 5
       value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  Pass: !<reference> 8c90123a-1b01-411d-a9b8-bf12543909df
+  Pass: !<reference> b9b782f1-b3c3-4971-ab11-849555c8adab

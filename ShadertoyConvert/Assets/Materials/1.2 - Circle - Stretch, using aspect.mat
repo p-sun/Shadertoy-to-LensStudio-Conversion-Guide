@@ -26,7 +26,7 @@
     screenTexture:
       typeIdx: 9
       value:
-        id: bbf2d983-84fb-4bd1-9611-2763f9c578cd
+        id: 996c6f4e-b2ad-4117-9e3e-3db82e6e97f5
         sampler:
           filteringMode: Trilinear
           wrapModeU: Repeat

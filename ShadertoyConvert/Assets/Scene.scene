@@ -1,12 +1,19 @@
 - !<Scene/0a1ccb1a-fe88-4fbb-9883-e3af3c75fd99>
   PackagePath: ""
   objects:
-    - !<own> cde6cb09-43b5-4680-b2ea-ecbb16fb38e3
-    - !<own> 3e7c2195-4744-4350-8fbf-f15a3dd72ded
     - !<own> afeefd9d-b152-43d0-906f-e6564f438241
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
-      []
+      - |
+        id: 1
+        name: a
+        color: 0
+
+      - |
+        id: 2
+        name: feedback a
+        color: 1
+
     HasOrtho: true
   RenderOutput: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
   RenderPreviewOutput: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
@@ -29,36 +36,6 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
-- !<SceneObject/024ca5e8-cabe-4bd2-9cdf-2ee0a254c11f>
-  PrefabRemaps:
-    []
-  Name: Second Face
-  Enabled: false
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    - !<own> 163591f1-3fed-44f5-bb03-7e5dc6e5c203
-  Components:
-    []
-- !<SceneObject/04833dc7-4974-4ce0-a235-1053367cad8e>
-  PrefabRemaps:
-    []
-  Name: Light
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 40.000000, y: 85.000000, z: 20.000000}
-    rotation: {x: 70.000000, y: 10.000000, z: 150.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> e8f38b3a-ee8b-4c29-8c58-ad3f1ff97c37
 - !<Canvas/05f1baee-34e9-4071-88ef-95d114ec2147>
   PrefabRemaps:
     []
@@ -78,72 +55,6 @@
   Enabled: true
   ScreenRegionType: FullFrame
   ResizeWithKeyboard: false
-- !<Camera/0d09197f-b000-4f6a-a991-cd2cc87903f3>
-  PrefabRemaps:
-    []
-  Name: Camera
-  Enabled: true
-  renderLayer: 1
-  MipmapLevel: 0
-  RenderOrder: 0
-  Size: 20.000000
-  Near: 1.000000
-  Far: 1000.000000
-  Fov: 63.541000
-  ClearColor:
-    mode: None
-    color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-  ClearDepth:
-    mode: Custom
-    value: 1.000000
-  Aspect: 1.000000
-  CameraType: Perspective
-  DepthMode: Regular
-  DeviceProperty: All
-  AspectPreset: Custom
-  OitLayers: NoOit
-  RenderTarget: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
-  DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
-  MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  InputTexture: !<reference> 996c6f4e-b2ad-4117-9e3e-3db82e6e97f5
-  RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
-- !<SceneObject/11d26711-a25b-47da-8869-32cbaf443ab9>
-  PrefabRemaps:
-    []
-  Name: Post Effect
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: -40.000000}
-    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 1e423e56-0966-4b59-9b66-d99b06714da5
-- !<SceneObject/163591f1-3fed-44f5-bb03-7e5dc6e5c203>
-  PrefabRemaps:
-    []
-  Name: Face Retouch
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: -40.000000}
-    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> f10fcc60-9e8d-4b8c-b2c3-194c31984058
-- !<PostEffectVisual/1e423e56-0966-4b59-9b66-d99b06714da5>
-  PrefabRemaps:
-    []
-  Name: Post Effect
-  Enabled: true
-  RenderOrder: 0
-  Material: !<reference> 7dd9ee56-e76e-406a-b64a-0ddada69f346
 - !<SceneObject/1f7e44e6-c407-4061-8ff2-300a4b598feb>
   PrefabRemaps:
     []
@@ -176,21 +87,6 @@
   Components:
     - !<own> 93fb20f7-55fe-4284-8b17-e096192d1497
     - !<own> 578a81e8-8265-4add-938b-29caf90b391e
-- !<SceneObject/27e0af83-40db-4ab6-a35d-2df06e1ae9e5>
-  PrefabRemaps:
-    []
-  Name: Envmap
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 65.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 60d75264-5511-4fdf-ae9b-cb4a70b91c54
 - !<ScreenTransform/2c243d0a-5dc7-4fa7-ba18-b2eb6ed22904>
   PrefabRemaps:
     []
@@ -286,28 +182,11 @@
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
   InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
-- !<SceneObject/3e7c2195-4744-4350-8fbf-f15a3dd72ded>
-  PrefabRemaps:
-    []
-  Name: Camera Object
-  Enabled: false
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 40.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    - !<own> 11d26711-a25b-47da-8869-32cbaf443ab9
-    - !<own> c6f8167f-6e8e-499a-9583-92b5fbd2e81d
-    - !<own> 024ca5e8-cabe-4bd2-9cdf-2ee0a254c11f
-  Components:
-    - !<own> 0d09197f-b000-4f6a-a991-cd2cc87903f3
 - !<SceneObject/4265b2f2-b64f-476f-a529-beea60a374c7>
   PrefabRemaps:
     []
   Name: 4.2 - Glow Boxes
-  Enabled: true
+  Enabled: false
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -435,24 +314,10 @@
     - !<own> f37cb194-51df-45c3-b9f9-aa8462732ad2
     - !<own> 5eb1645c-21df-41c0-9647-eaa2c474c14f
     - !<own> d0406269-cda8-436d-ae24-3c653851cc76
+    - !<own> dd797d63-616f-4c9e-b4e6-a9594454890e
   Components:
     - !<own> c08cc101-b5b2-4acc-987e-af4992f729c8
     - !<own> 7aebb04d-b188-4d56-a795-24e0616e896e
-- !<SceneObject/5d2216d4-3175-4c82-a746-57e28a6a53b0>
-  PrefabRemaps:
-    []
-  Name: Face Retouch
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: -40.000000}
-    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> ed84e7be-e020-415a-82bd-ed64e170aa5f
 - !<SceneObject/5eb1645c-21df-41c0-9647-eaa2c474c14f>
   PrefabRemaps:
     []
@@ -469,41 +334,6 @@
   Components:
     - !<own> b5acb0f3-c59a-4c77-ab19-556991be9255
     - !<own> f2544255-75a4-44c8-ab45-fb970883868e
-- !<LightSource/60d75264-5511-4fdf-ae9b-cb4a70b91c54>
-  PrefabRemaps:
-    []
-  Name: Light Source
-  Enabled: true
-  renderLayer: 1
-  LightType: EnvMap
-  Intensity: 1.000000
-  CastShadows: false
-  ShadowDensity: 1.000000
-  ShadowBlurRadius: 0.000000
-  ShadowTextureSize: 512
-  AutoLightSourcePosition: false
-  AutoShadowFrustumSize: false
-  AutoShadowFrustumSizeExtend: 2.000000
-  ShadowFrustumSize: 30.000000
-  ShadowFrustumNearClipPlane: 1.000000
-  ShadowFrustumFarClipPlane: 1000.000000
-  UseEnvMapFromCamera: false
-  EnvMapFromCameraMode: Auto
-  UseEstimation: false
-  EstimationIntensity: 1.000000
-  EstimationSharpness: 1.000000
-  EnvMapExposure: 1.000000
-  EnvMapRotation: 0.000000
-  DiffuseEnvTexture: !<reference> 2013a19b-93c1-4f21-b7ea-876a33550c7b
-  SpecularEnvTexture: !<reference> d795fd46-e16b-4cb9-8dfb-4ef227298f7a
-  Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-  DynamicEnvInputTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  InnerConeAngle: 0.000000
-  OuterConeAngle: 45.000000
-  DecayType: None
-  DecayLimit: false
-  DecayRange: 40.000000
 - !<ScreenTransform/665e635c-717f-42b3-be71-2328bb518656>
   PrefabRemaps:
     []
@@ -647,6 +477,39 @@
   ScreenRegionType: FullFrame
   ResizeWithKeyboard: false
 - !<ScreenTransform/8c1c381b-0018-43a0-a857-32a752e1ce02>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
+- !<ScreenTransform/913d12e8-9351-45e4-a790-e298d9e41a92>
   PrefabRemaps:
     []
   Name: Screen Transform
@@ -886,6 +749,23 @@
   Components:
     - !<own> 9ec05a96-8ad9-45ea-9c64-dfb241387d1a
     - !<own> b0ce81cc-37a3-4343-8282-00a3bd0a6ee1
+- !<Image/be6b8b38-0f22-4d39-b556-bd6f268213f1>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 4d9b3073-a59b-49e7-972f-5858274c7c2d
+  FlipX: false
+  FlipY: false
+  Pivot: {x: 0.000000, y: 0.000000}
 - !<ScreenTransform/bfa3a3f3-1f4f-4365-91af-01511f47ef4a>
   PrefabRemaps:
     []
@@ -1002,37 +882,6 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
-- !<SceneObject/c6f8167f-6e8e-499a-9583-92b5fbd2e81d>
-  PrefabRemaps:
-    []
-  Name: First Face
-  Enabled: false
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    - !<own> 5d2216d4-3175-4c82-a746-57e28a6a53b0
-  Components:
-    []
-- !<SceneObject/cde6cb09-43b5-4680-b2ea-ecbb16fb38e3>
-  PrefabRemaps:
-    []
-  Name: Lighting
-  Enabled: false
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    - !<own> 27e0af83-40db-4ab6-a35d-2df06e1ae9e5
-    - !<own> 04833dc7-4974-4ce0-a235-1053367cad8e
-  Components:
-    []
 - !<SceneObject/d0406269-cda8-436d-ae24-3c653851cc76>
   PrefabRemaps:
     []
@@ -1082,6 +931,22 @@
   Components:
     - !<own> 8c1c381b-0018-43a0-a857-32a752e1ce02
     - !<own> 675b966b-697d-4c73-af7a-16e3206c3ba9
+- !<SceneObject/dd797d63-616f-4c9e-b4e6-a9594454890e>
+  PrefabRemaps:
+    []
+  Name: 3.3 - Read and write to pixel
+  Enabled: true
+  Layers: 1048576
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 913d12e8-9351-45e4-a790-e298d9e41a92
+    - !<own> be6b8b38-0f22-4d39-b556-bd6f268213f1
 - !<Image/de41aba7-2b4e-40bb-a79a-6e6ac6770ed7>
   PrefabRemaps:
     []
@@ -1099,41 +964,6 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
-- !<LightSource/e8f38b3a-ee8b-4c29-8c58-ad3f1ff97c37>
-  PrefabRemaps:
-    []
-  Name: Light Source
-  Enabled: true
-  renderLayer: 1
-  LightType: Directional
-  Intensity: 1.000000
-  CastShadows: false
-  ShadowDensity: 0.440000
-  ShadowBlurRadius: 4.000000
-  ShadowTextureSize: 512
-  AutoLightSourcePosition: true
-  AutoShadowFrustumSize: true
-  AutoShadowFrustumSizeExtend: 2.000000
-  ShadowFrustumSize: 30.000000
-  ShadowFrustumNearClipPlane: 1.000000
-  ShadowFrustumFarClipPlane: 1000.000000
-  UseEnvMapFromCamera: false
-  EnvMapFromCameraMode: Auto
-  UseEstimation: false
-  EstimationIntensity: 1.000000
-  EstimationSharpness: 1.000000
-  EnvMapExposure: 1.000000
-  EnvMapRotation: 0.000000
-  DiffuseEnvTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  SpecularEnvTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-  DynamicEnvInputTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  InnerConeAngle: 0.000000
-  OuterConeAngle: 45.000000
-  DecayType: None
-  DecayLimit: false
-  DecayRange: 40.000000
 - !<Image/ecb53c33-e265-4e57-abb1-23c58d7e0e3e>
   PrefabRemaps:
     []
@@ -1151,192 +981,6 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
-- !<RetouchVisual/ed84e7be-e020-415a-82bd-ed64e170aa5f>
-  PrefabRemaps:
-    []
-  Name: Face Retouch
-  Enabled: true
-  RenderOrder: 0
-  FaceIndex: 0
-  AutoMode: true
-  AutoType: MlRetouch
-  SoftSkinEnabled: true
-  SoftSkinIntensity: 1.000000
-  TeethWhiteningEnabled: true
-  TeethWhiteningIntensity: 0.400000
-  EyeSharpeningEnabled: true
-  EyeSharpeningIntensity: 0.700000
-  EyeWhiteningEnabled: true
-  EyeWhiteningIntensity: 0.300000
-  TextureCoordinates:
-    - {x: 0.042176, y: 0.487153}
-    - {x: 0.050034, y: 0.560045}
-    - {x: 0.068312, y: 0.620651}
-    - {x: 0.094898, y: 0.698092}
-    - {x: 0.137781, y: 0.771647}
-    - {x: 0.196259, y: 0.823793}
-    - {x: 0.272374, y: 0.864801}
-    - {x: 0.360761, y: 0.906846}
-    - {x: 0.505500, y: 0.936027}
-    - {x: 0.651094, y: 0.906202}
-    - {x: 0.740179, y: 0.863246}
-    - {x: 0.815244, y: 0.821252}
-    - {x: 0.871161, y: 0.768013}
-    - {x: 0.911349, y: 0.693912}
-    - {x: 0.935981, y: 0.617186}
-    - {x: 0.953375, y: 0.557976}
-    - {x: 0.961071, y: 0.486209}
-    - {x: 0.141550, y: 0.425154}
-    - {x: 0.190398, y: 0.388542}
-    - {x: 0.261150, y: 0.378964}
-    - {x: 0.332630, y: 0.388794}
-    - {x: 0.398767, y: 0.412476}
-    - {x: 0.600716, y: 0.412226}
-    - {x: 0.668048, y: 0.388749}
-    - {x: 0.740687, y: 0.379184}
-    - {x: 0.812402, y: 0.389274}
-    - {x: 0.861802, y: 0.426481}
-    - {x: 0.500528, y: 0.449956}
-    - {x: 0.500177, y: 0.495004}
-    - {x: 0.499794, y: 0.522222}
-    - {x: 0.499353, y: 0.558485}
-    - {x: 0.444626, y: 0.599369}
-    - {x: 0.471634, y: 0.604367}
-    - {x: 0.499352, y: 0.609457}
-    - {x: 0.527251, y: 0.604827}
-    - {x: 0.554210, y: 0.600117}
-    - {x: 0.157412, y: 0.477612}
-    - {x: 0.217647, y: 0.434494}
-    - {x: 0.324231, y: 0.435234}
-    - {x: 0.403611, y: 0.471437}
-    - {x: 0.328043, y: 0.500339}
-    - {x: 0.220157, y: 0.500829}
-    - {x: 0.594118, y: 0.470978}
-    - {x: 0.674431, y: 0.434494}
-    - {x: 0.780835, y: 0.434367}
-    - {x: 0.840301, y: 0.477583}
-    - {x: 0.777087, y: 0.500280}
-    - {x: 0.669412, y: 0.499171}
-    - {x: 0.328079, y: 0.771144}
-    - {x: 0.415048, y: 0.742348}
-    - {x: 0.457629, y: 0.737240}
-    - {x: 0.497949, y: 0.748319}
-    - {x: 0.538753, y: 0.737499}
-    - {x: 0.581569, y: 0.742952}
-    - {x: 0.668832, y: 0.771672}
-    - {x: 0.597583, y: 0.795555}
-    - {x: 0.559266, y: 0.803216}
-    - {x: 0.497426, y: 0.810945}
-    - {x: 0.436000, y: 0.802653}
-    - {x: 0.398353, y: 0.794362}
-    - {x: 0.353177, y: 0.771144}
-    - {x: 0.463608, y: 0.754561}
-    - {x: 0.498001, y: 0.759536}
-    - {x: 0.532835, y: 0.754821}
-    - {x: 0.642564, y: 0.771706}
-    - {x: 0.533882, y: 0.791045}
-    - {x: 0.497687, y: 0.791045}
-    - {x: 0.461907, y: 0.790932}
-    - {x: 0.050865, y: 0.172151}
-    - {x: 0.205652, y: 0.073161}
-    - {x: 0.339052, y: 0.029951}
-    - {x: 0.500065, y: 0.021309}
-    - {x: 0.662180, y: 0.029672}
-    - {x: 0.797056, y: 0.072717}
-    - {x: 0.951792, y: 0.171655}
-- !<RetouchVisual/f10fcc60-9e8d-4b8c-b2c3-194c31984058>
-  PrefabRemaps:
-    []
-  Name: Face Retouch
-  Enabled: true
-  RenderOrder: 0
-  FaceIndex: 1
-  AutoMode: true
-  AutoType: MlRetouch
-  SoftSkinEnabled: true
-  SoftSkinIntensity: 1.000000
-  TeethWhiteningEnabled: true
-  TeethWhiteningIntensity: 0.400000
-  EyeSharpeningEnabled: true
-  EyeSharpeningIntensity: 0.700000
-  EyeWhiteningEnabled: true
-  EyeWhiteningIntensity: 0.300000
-  TextureCoordinates:
-    - {x: 0.042176, y: 0.487153}
-    - {x: 0.050034, y: 0.560045}
-    - {x: 0.068312, y: 0.620651}
-    - {x: 0.094898, y: 0.698092}
-    - {x: 0.137781, y: 0.771647}
-    - {x: 0.196259, y: 0.823793}
-    - {x: 0.272374, y: 0.864801}
-    - {x: 0.360761, y: 0.906846}
-    - {x: 0.505500, y: 0.936027}
-    - {x: 0.651094, y: 0.906202}
-    - {x: 0.740179, y: 0.863246}
-    - {x: 0.815244, y: 0.821252}
-    - {x: 0.871161, y: 0.768013}
-    - {x: 0.911349, y: 0.693912}
-    - {x: 0.935981, y: 0.617186}
-    - {x: 0.953375, y: 0.557976}
-    - {x: 0.961071, y: 0.486209}
-    - {x: 0.141550, y: 0.425154}
-    - {x: 0.190398, y: 0.388542}
-    - {x: 0.261150, y: 0.378964}
-    - {x: 0.332630, y: 0.388794}
-    - {x: 0.398767, y: 0.412476}
-    - {x: 0.600716, y: 0.412226}
-    - {x: 0.668048, y: 0.388749}
-    - {x: 0.740687, y: 0.379184}
-    - {x: 0.812402, y: 0.389274}
-    - {x: 0.861802, y: 0.426481}
-    - {x: 0.500528, y: 0.449956}
-    - {x: 0.500177, y: 0.495004}
-    - {x: 0.499794, y: 0.522222}
-    - {x: 0.499353, y: 0.558485}
-    - {x: 0.444626, y: 0.599369}
-    - {x: 0.471634, y: 0.604367}
-    - {x: 0.499352, y: 0.609457}
-    - {x: 0.527251, y: 0.604827}
-    - {x: 0.554210, y: 0.600117}
-    - {x: 0.157412, y: 0.477612}
-    - {x: 0.217647, y: 0.434494}
-    - {x: 0.324231, y: 0.435234}
-    - {x: 0.403611, y: 0.471437}
-    - {x: 0.328043, y: 0.500339}
-    - {x: 0.220157, y: 0.500829}
-    - {x: 0.594118, y: 0.470978}
-    - {x: 0.674431, y: 0.434494}
-    - {x: 0.780835, y: 0.434367}
-    - {x: 0.840301, y: 0.477583}
-    - {x: 0.777087, y: 0.500280}
-    - {x: 0.669412, y: 0.499171}
-    - {x: 0.328079, y: 0.771144}
-    - {x: 0.415048, y: 0.742348}
-    - {x: 0.457629, y: 0.737240}
-    - {x: 0.497949, y: 0.748319}
-    - {x: 0.538753, y: 0.737499}
-    - {x: 0.581569, y: 0.742952}
-    - {x: 0.668832, y: 0.771672}
-    - {x: 0.597583, y: 0.795555}
-    - {x: 0.559266, y: 0.803216}
-    - {x: 0.497426, y: 0.810945}
-    - {x: 0.436000, y: 0.802653}
-    - {x: 0.398353, y: 0.794362}
-    - {x: 0.353177, y: 0.771144}
-    - {x: 0.463608, y: 0.754561}
-    - {x: 0.498001, y: 0.759536}
-    - {x: 0.532835, y: 0.754821}
-    - {x: 0.642564, y: 0.771706}
-    - {x: 0.533882, y: 0.791045}
-    - {x: 0.497687, y: 0.791045}
-    - {x: 0.461907, y: 0.790932}
-    - {x: 0.050865, y: 0.172151}
-    - {x: 0.205652, y: 0.073161}
-    - {x: 0.339052, y: 0.029951}
-    - {x: 0.500065, y: 0.021309}
-    - {x: 0.662180, y: 0.029672}
-    - {x: 0.797056, y: 0.072717}
-    - {x: 0.951792, y: 0.171655}
 - !<Image/f2544255-75a4-44c8-ab45-fb970883868e>
   PrefabRemaps:
     []
