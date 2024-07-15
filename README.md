@@ -197,3 +197,9 @@ vec4 floatToColor(float value) {
     return vec4(rgb, 1.0);
 }
 ```
+
+### Included Shaders
+<img src="https://github.com/user-attachments/assets/49af9e3d-d0b5-4200-801a-ce5ff6dd8c96" width="300">
+<img src="https://github.com/user-attachments/assets/31b8da85-cbb9-4577-8185-c035225a7ebf" width="300">
+<video src="https://github.com/user-attachments/assets/7dcf4999-4970-4dde-b9c2-c623cbd28f45" width="300">
+<video src="https://github.com/user-attachments/assets/fd79cbed-d3c4-4536-a094-7c621a7c5499" width="300">
