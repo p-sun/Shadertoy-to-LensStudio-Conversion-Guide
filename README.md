@@ -77,20 +77,20 @@ Ranges are the same in Shadertoy and LS.
 | `vec2 fragCoord` | `fragCoord` | `uv * iResolution.xy` | [0.5, iResolution.x - 0.5] |
 | `vec3 iResolution` | `iResolution` | `input_texture_2d inputTexture; vec3(inputTexture.textureSize(), 1.0)` | Constant whole number depending on screen size |
 
-Examples:
+Examples for the x-axis for resolution of 4 and 3. The value below the arrow `^` is the position on the horizonal number line.
 ```
-resolution = 4                          resolution = 3
-             _________________                       _____________
-pixelCoord   | 0 | 1 | 2 | 3 |          pixelCoord   | 0 | 1 | 2 |
-             ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                       ‾‾‾‾‾‾‾‾‾‾‾‾‾
-             ^   ^   ^   ^   ^                       ^   ^   ^   ^
-position     0   1   2   3   4          position     0   1   2   3
-
-               ^   ^   ^   ^                           ^   ^   ^  
-fragCoord     0.5 1.5 2.5 3.5           fragCoord     0.5 1.5 2.5 
-
-               ^   ^   ^   ^                           ^   ^   ^  
-uv            1/8 3/8 5/8 7/8           uv            1/6 3/6 5/6
+resolution = 4                     |     resolution = 3
+             _________________     |                  _____________
+pixelCoord   | 0 | 1 | 2 | 3 |     |     pixelCoord   | 0 | 1 | 2 |
+             ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾     |                  ‾‾‾‾‾‾‾‾‾‾‾‾‾
+             ^   ^   ^   ^   ^     |                  ^   ^   ^   ^
+position     0   1   2   3   4     |     position     0   1   2   3
+                                   |
+               ^   ^   ^   ^       |                    ^   ^   ^  
+fragCoord     0.5 1.5 2.5 3.5      |     fragCoord     0.5 1.5 2.5 
+                                   |
+               ^   ^   ^   ^       |                    ^   ^   ^  
+uv            1/8 3/8 5/8 7/8      |     uv            1/6 3/6 5/6
 ```
 
 ### Read and Write to Pixel Coordinates
@@ -98,7 +98,6 @@ uv            1/8 3/8 5/8 7/8           uv            1/6 3/6 5/6
 In Shadertoy, we can pass data from one frame to the next by encoding data as a color on a specific pixel, and reading that pixel on the next frame.
 
 See this [Shadertoy Example](https://www.shadertoy.com/view/XflczH) or "Read and write to pixel" in this repo for the Lens Studio equivalent.
-
 
 Write to pixel in Shadertoy and Lens Studio:
 ```glsl
@@ -109,7 +108,7 @@ if (pixelCoord.x == 30.0 && pixelCoord.y == 30.0) {
 }
 ```
 
-Reading from a pixel Shadertoy uses `texture`, `textureLod` or `textureFetch`.
+To read from a pixel in Shadertoy we use `texture`, `textureLod` or `textureFetch`.
 ```glsl
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
@@ -121,7 +120,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     vec4 pixelColor = texelFetch(iChannel0, ivec2(30,30), 0);
 ```
 
-Reading from a pixel in Lens Studio uses `sample` or `sampleLod`.
+To read from a pixel in Lens Studio we use `sample` or `sampleLod`.
 ```glsl
 input_texture_2d iChannel0;
 
@@ -181,7 +180,7 @@ script.createEvent("UpdateEvent").bind(onUpdate);
 ``` 
 
 ## Debugging Tip - Comparing Values
-We can compare whether `float testValue` is roughly the same in Lens Studio and Shadertoy by mapping that float to a color with `fragColor = floatToColor(testValue);`. This is a quick and useful method to find where Lens Studio shader differs from the original.
+We can compare whether some variable `float testValue` is roughly the same in Lens Studio and Shadertoy by mapping that float to a color with `fragColor = floatToColor(testValue);`. This is a useful strategy to see where our Lens Studio shader differs from the original.
 
 ```glsl
 vec3 hsv2rgb(vec3 c) {
@@ -198,8 +197,12 @@ vec4 floatToColor(float value) {
 }
 ```
 
-### Included Shaders
+# Included Shaders
 <img src="https://github.com/user-attachments/assets/49af9e3d-d0b5-4200-801a-ce5ff6dd8c96" width="300">
+
 <img src="https://github.com/user-attachments/assets/31b8da85-cbb9-4577-8185-c035225a7ebf" width="300">
-<video src="https://github.com/user-attachments/assets/7dcf4999-4970-4dde-b9c2-c623cbd28f45" width="300">
-<video src="https://github.com/user-attachments/assets/fd79cbed-d3c4-4536-a094-7c621a7c5499" width="300">
+
+https://github.com/user-attachments/assets/66ce250f-952f-4315-bcd9-cd2f77ef542a
+
+https://github.com/user-attachments/assets/7dcf4999-4970-4dde-b9c2-c623cbd28f45
+
