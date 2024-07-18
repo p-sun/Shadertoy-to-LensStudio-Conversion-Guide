@@ -1,8 +1,8 @@
-- !<Material/bdfd371f-bcc5-41bd-a0f7-578fec60054a>
+- !<Material/39e0a211-228d-444d-921a-904961db38ef>
   PackagePath: ""
   PassesInfo:
-    - !<own> 0e0f87ce-7999-4c90-b427-3e8cfe64c606
-- !<PassInfo/0e0f87ce-7999-4c90-b427-3e8cfe64c606>
+    - !<own> 9b88d645-76f0-4648-85be-ab7c9542d055
+- !<PassInfo/9b88d645-76f0-4648-85be-ab7c9542d055>
   DepthWrite: false
   DepthTest: false
   DepthFunction: LessEqual
@@ -17,9 +17,6 @@
     []
   BlendMode: PremultipliedAlphaAuto
   Properties:
-    Port_Input2_N003:
-      typeIdx: 1
-      value: 0.500000
     PreviewEnabled:
       typeIdx: 0
       value: 0
@@ -52,4 +49,4 @@
     screenTextureUvMinMax:
       typeIdx: 5
       value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  Pass: !<reference> 364098ed-57eb-4fd0-bf65-d0ba2c02bc45
+  Pass: !<reference> 047fd24f-64a0-4fe2-801c-5edae1f94f8d

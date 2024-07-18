@@ -279,7 +279,7 @@
 - !<SceneObject/31bc23db-cd63-4127-8f67-465ee166329e>
   PrefabRemaps:
     []
-  Name: "1.2 - Circle - Stretch, using aspect (EASY)"
+  Name: 1.2 - Circle - Using aspect
   Enabled: false
   Layers: 1048576
   LocalTransform:
@@ -448,9 +448,9 @@
     hasSegmentScaleCompensation: false
   Children:
     - !<own> e8246871-cba0-4428-9c3f-2da657f0fec3
-    - !<own> bedf5efe-d38c-40fc-9c87-570dcf1bcf06
-    - !<own> 31bc23db-cd63-4127-8f67-465ee166329e
     - !<own> e5b7162b-b57a-431b-b9ef-2f14ec131365
+    - !<own> 31bc23db-cd63-4127-8f67-465ee166329e
+    - !<own> eb3cd083-446e-4bfb-8ada-3e7b495237e6
   Components:
     - !<own> b5db7ece-e79f-44d9-a3b0-443484b9f8a8
     - !<own> 30e05fd5-12c5-470f-b26a-92910cf536ad
@@ -498,7 +498,7 @@
   PrefabRemaps:
     []
   Name: 3.1 - Plasma Globe - Sample image for noise
-  Enabled: true
+  Enabled: false
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -626,7 +626,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
-- !<ScreenTransform/7a26d832-3718-4807-a272-a699ccd9821d>
+- !<ScreenTransform/74c1b302-8a77-4ea7-a2cb-109648f0b033>
   PrefabRemaps:
     []
   Name: Screen Transform
@@ -672,7 +672,7 @@
   Name: Image
   Enabled: true
   RenderOrder: 0
-  StretchMode: Fill
+  StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
   MeshShadowMode: None
@@ -906,6 +906,23 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+- !<Image/a121e818-da17-41b7-985e-f80568889b66>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 39e0a211-228d-444d-921a-904961db38ef
+  FlipX: false
+  FlipY: false
+  Pivot: {x: 0.000000, y: 0.000000}
 - !<SceneObject/afeefd9d-b152-43d0-906f-e6564f438241>
   PrefabRemaps:
     []
@@ -1025,22 +1042,6 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
-- !<SceneObject/bedf5efe-d38c-40fc-9c87-570dcf1bcf06>
-  PrefabRemaps:
-    []
-  Name: "1.1 - Circle - Stretch, using resolution (COPY ME for Shadertoy)"
-  Enabled: false
-  Layers: 1048576
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 7a26d832-3718-4807-a272-a699ccd9821d
-    - !<own> d0926998-473f-4644-97db-b65e643fe4ee
 - !<ScreenTransform/bfa3a3f3-1f4f-4365-91af-01511f47ef4a>
   PrefabRemaps:
     []
@@ -1205,23 +1206,6 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
-- !<Image/d0926998-473f-4644-97db-b65e643fe4ee>
-  PrefabRemaps:
-    []
-  Name: Image
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> bdfd371f-bcc5-41bd-a0f7-578fec60054a
-  FlipX: false
-  FlipY: false
-  Pivot: {x: 0.000000, y: 0.000000}
 - !<SceneObject/dcd04079-9eec-4093-94f9-10e79511cdfc>
   PrefabRemaps:
     []
@@ -1274,8 +1258,8 @@
 - !<SceneObject/e5b7162b-b57a-431b-b9ef-2f14ec131365>
   PrefabRemaps:
     []
-  Name: "1.3 - Circle - Fill, using resolution"
-  Enabled: false
+  Name: 1.1 - Circle - Using resolution (Easiest to Use)
+  Enabled: true
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1303,6 +1287,22 @@
   Components:
     - !<own> 14f9f53e-9d7f-4b21-9052-9f8978a4859c
     - !<own> bd3ce705-b034-4f08-ab3c-a78cf55b7433
+- !<SceneObject/eb3cd083-446e-4bfb-8ada-3e7b495237e6>
+  PrefabRemaps:
+    []
+  Name: 1.3 - Circle - Using resolution (fewest nodes)
+  Enabled: false
+  Layers: 1048576
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 74c1b302-8a77-4ea7-a2cb-109648f0b033
+    - !<own> a121e818-da17-41b7-985e-f80568889b66
 - !<Image/ecb53c33-e265-4e57-abb1-23c58d7e0e3e>
   PrefabRemaps:
     []
