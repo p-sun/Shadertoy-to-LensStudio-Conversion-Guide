@@ -20,6 +20,12 @@
     PreviewEnabled:
       typeIdx: 0
       value: 0
+    overrideTimeElapsed:
+      typeIdx: 1
+      value: 0.000000
+    overrideTimeEnabled:
+      typeIdx: 0
+      value: 0
     screenTexture:
       typeIdx: 9
       value:

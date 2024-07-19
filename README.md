@@ -11,59 +11,84 @@ This repository includes all the shaders from Micheal Porter's video, recreated 
 Paste shader code from Shadertoy into the above link, and paste it into a Code Node in Lens Studio. I have forked and added upon Hart Woolery's [original conversion tool](https://codepen.io/2020cv/pen/YzaEBgy) to handle more cases.
 
 # Shadertoy Conversions
-## iResolution / fragCoord / uv
+## Basic Setup - iResolution / fragCoord / uv
 
-Shadertoy:
+In Shadertoy, our main function looks like this.
 ```glsl
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     vec2 uv = fragCoord/iResolution.xy;
+    fragColor = vec4(uv, 0, 1); // Draw red-green gradient
+
+    // Blue circle of radius 1, at 0,0.
+    if (abs(length(uv) - 1.0) < 0.04) { 
+     fragColor = vec4(0, 0, 1, 1);
+    }
+}
 ```
 
-Lens Studio:
-```glsl
-input_texture_2d inputTexture;
+To set that up for Lens Studio, see "1.1 - Circle - Using resolution" in this project.
+1. Make a new Screen Image. In the Inspector Panel for the Screen Image, set `Stretch Mode` to `Stretch`.
+   * Optionally, for performance and if your shader don't need screen resolution and is a square, set `Stretch Mode` to `Fill` and skip setup from step 4 and on.
+2. Select the Screen Image > Select Material > Select the Shader Graph. Setup the Shader Graph like so.
 
-vec3 getResolution() { 
-    vec2 size = inputTexture.textureSize();
-    return (size.x == 0.0) ? vec3(640.0, 640.0, 1.0) : vec3(size, 1.0);
-}
+<img src="https://github.com/user-attachments/assets/9ca50187-c3bd-465b-9860-1877520ae126" width="600">
+
+3. Convert the Shadertoy code into [Shadertoy to Code Node (Improved!)](https://codepen.io/PaigeSun/full/ExBYPVQ). In the Shader Graph in Lens Studio, paste that code into the Code Node.
+
+```glsl
+// The shader output color
+output_vec4 fragColor;
+// The shader resolution
+input_vec2 resolution;
+vec3 getResolution() { if (resolution.x == 0.) return vec3(640,640,1); return vec3(resolution,1);}
 
 #define iResolution getResolution()
 
 void main()
 {
-    vec2 uv = system.getSurfaceUVCoord0();
-    vec2 fragCoord = uv * iResolution.xy;
-```
+    vec2 fragCoord = system.getSurfaceUVCoord0() * iResolution.xy;   
+    // Nomalized to [0, 1] on the x-axis. 
+    vec2 uv = (2.*fragCoord - iResolution.xy)/iResolution.x;
 
-#### (Option A) If your shader is a square:
-- In the Inspector Panel for the Screen Image, set `Stretch Mode` to `Fill`.
-
-#### (Option B) If your shader needs the screen resolution:
-- In the Inspector Panel for the Screen Image, set `Stretch Mode` to `Stretch`.
-- In the Shader Graph, add a `Texture 2D Object Parameter` Node, and make that the input of `Input Texture` declared above.
-- In the Inspector Panel for the Material, drag `Device Camera Texture` from the Assets Panel as the `Input Texture`. ** 
-
-##### (Option B **) Fix if you're not seeing `Input Texture` in the Material Inspector Panel
-In Lens Studio, `textureSize()` is only correct when you sample the texture and it contributes to the final output. You can get the correct resolution without using the pixel colors in the output by adding this in `main()`.
-
-Lens Studio:
-```glsl
-input_texture_2d inputTexture;
-
-void main()
-{
-    // textureSize() only works when the texture contributes to the output.
-    // This allows us to get the textureSize() without affecting the output.
-    vec2 uv = system.getSurfaceUVCoord0();
-    if (uv.x == 1.0 && uv.y == 1.0) {
-        vec4 sampledCol = inputTexture.sample(vec2(0.0));
-	    fragColor = mix(sampledCol, fragColor, 0.9999999);
+    // Red-green gradient
+    fragColor = vec4(uv, 0, 1);
+    
+    // Blue circle of radius 1, at 0,0.
+    if (abs(length(uv) - 1.0) < 0.04) { 
+     fragColor = vec4(0, 0, 1, 1);
     }
+}
+```
+4. In the Inspector Panel for the Material, drag `Device Camera Texture` from the Assets Panel as the `Resolution Texture`. Set `Filtering Mode` to `Nearest`.
+
+<img src="https://github.com/user-attachments/assets/49af9e3d-d0b5-4200-801a-ce5ff6dd8c96" width="300">
+
+### iResolution Tip - Get the resolution without sampling texture
+In Lens Studio, `textureSize()` only works when the texture sample contributes to the output. If we don't need to sample the texture, we can add the following in the main() function of our Code Node.
+
+This allows us to simplify the Shader Graph from step 2 above this.
+
+<img src="https://github.com/user-attachments/assets/c68634df-05c1-4cb9-8295-b721ed8daae9" width="600">
+
+```glsl
+// Texture used to get the resolution
+input_texture_2d resolutionTexture;
+
+void main() {
+    //...
+    // Add this to only sample one pixel on the first frame.
+    if (system.getTimeElapsed() == 0.0 && system.getSurfaceUVCoord0().y == 1.0 && resolutionTexture.textureSize().x == 0.0) {
+        fragColor = mix(resolutionTexture.sample(vec2(0)), fragColor, 0.9999999);
+    }
+}
 ```
 
-## texture, textureLod, textureFetch
+See "1.3 - Circle - Using resolution (fewest nodes)" example in this project.
+
+<img src="https://github.com/user-attachments/assets/5dcc807f-6290-4703-8457-aba5d237e591" width="300">
+
+## texture, textureLod, textureFetch, iChannel
 
 ### Pixel Coordinates
 
@@ -95,9 +120,9 @@ uv            1/8 3/8 5/8 7/8      |     uv            1/6 3/6 5/6
 
 ### Read and Write to Pixel Coordinates
 
-In Shadertoy, we can pass data from one frame to the next by encoding data as a color on a specific pixel, and reading that pixel on the next frame.
+In Shadertoy, we use `iChannel0`/`iChannel1`/`iChannel2`/`iChannel3` to insert 2D textures, such as images, videos, or 2D buffers. We use `sample` or `sampleLod` as above to read the color at a position. In Shadertoy, we can pass data from one frame to the next by encoding data as a color on a specific pixel, and reading that pixel on the next frame.
 
-See this [Shadertoy Example](https://www.shadertoy.com/view/XflczH) or "Read and write to pixel" in this repo for the Lens Studio equivalent.
+See this repo, see [Shadertoy Example](https://www.shadertoy.com/view/XflczH) or "Read and write to pixel" in this repo for the Lens Studio equivalent.
 
 Write to pixel in Shadertoy and Lens Studio:
 ```glsl
@@ -132,7 +157,24 @@ void main() {
     vec4 pixelColor = iChannel0.sampleLod(uvToRead, 0.0);
 ```
 
-### Important Differences for Reading/Writing to Pixels
+To set it up in Lens Studio:
+1. Create a new Render Target, rename it `Feedback Render Target`. Create a new Orthographic Camera, set it to another layer. Set the camera to `Feedback Render Target`.
+
+![image](https://github.com/user-attachments/assets/702d5840-6640-4a15-b080-c8c7593a85d4)
+
+3. In the Code Node, we declare `iChannel0`.
+```glsl
+input_texture_2d iChannel0;
+```
+4. In the Shader Graph, we add a `Texture 2D Object Parameter` node, and set it as the input of `iChannel0` in the Code Node, and set the Title to `Feedback Buffer`.
+
+![image](https://github.com/user-attachments/assets/a00f4b3d-31b6-482a-91d3-0d2fd35e4249)
+
+5. In the Material for the shader, we set `Feedback Buffer` to `Feedback Render Target`.
+
+![image](https://github.com/user-attachments/assets/eab91d64-0d54-48f8-ae54-f90564e82941)
+
+### Important Differences when Reading/Writing to Pixels
 * Shadertoy buffers can save 32 bit floats on 4 channels for a __total of 128 bits per pixel__. but Lens Studio can only save 8 bit on 4 channels for a __total of 32 bits per pixel__. In Lens Studio, each 8 bit channel only take on 256 different values, from 0.0/255.0, 1.0/255.0, 2.0/255.0 ... 255.0/255.0.
 * If we need to precisely save all 32 bits of a float, in Lens Studio we can pack that into 4 pixels. Set min and max for values specific to your shader.
     ``` glsl
@@ -198,7 +240,6 @@ vec4 floatToColor(float value) {
 ```
 
 # Included Shaders
-<img src="https://github.com/user-attachments/assets/49af9e3d-d0b5-4200-801a-ce5ff6dd8c96" width="300">
 
 <img src="https://github.com/user-attachments/assets/31b8da85-cbb9-4577-8185-c035225a7ebf" width="300">
 
@@ -206,3 +247,7 @@ https://github.com/user-attachments/assets/66ce250f-952f-4315-bcd9-cd2f77ef542a
 
 https://github.com/user-attachments/assets/7dcf4999-4970-4dde-b9c2-c623cbd28f45
 
+# Not Included
+Using these strategies, we can even convert [Iq's infamous Rainforest Shader](https://www.shadertoy.com/view/4ttSWf) (top) to run in Lens Studio (bottom).
+
+https://github.com/user-attachments/assets/f157b615-cbd7-41c0-8650-d312fcaca875

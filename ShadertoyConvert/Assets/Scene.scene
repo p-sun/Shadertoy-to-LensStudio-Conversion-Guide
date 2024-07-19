@@ -72,39 +72,6 @@
   Components:
     - !<own> cbbc2e88-15ed-44b2-ab5a-9633a8d31212
     - !<own> 0787394b-ef9c-445c-86b5-a1ebd26a6b48
-- !<ScreenTransform/0f2f0ce4-b095-4c2d-9e1f-72840b64e2cc>
-  PrefabRemaps:
-    []
-  Name: Screen Transform
-  Enabled: true
-  IsAdvanced: false
-  Constraints:
-    pinToLeft: false
-    pinToTop: false
-    pinToRight: false
-    pinToBottom: false
-    fixedWidth: false
-    fixedHeight: false
-    deactivatedFixedSprite: false
-    deactivatedFixedPivot: false
-  Pivot: {x: 0.000000, y: 0.000000}
-  Transform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  RawMode: true
-  ForceBasic: true
-  Anchor:
-    left: -1.000000
-    bottom: -1.000000
-    right: 1.000000
-    top: 1.000000
-  Offset:
-    left: 0.000000
-    bottom: 0.000000
-    right: 0.000000
-    top: 0.000000
 - !<Image/11fd5f73-809b-42cc-aa60-8dd043139df2>
   PrefabRemaps:
     []
@@ -230,7 +197,7 @@
 - !<SceneObject/315a9442-0eae-41d0-8604-6654aa8b0c85>
   PrefabRemaps:
     []
-  Name: "3.5 - Read and write to pixel, use another camera"
+  Name: "3.4 - Read and write to pixel, use another camera"
   Enabled: false
   Layers: 1048576
   LocalTransform:
@@ -321,22 +288,6 @@
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
   InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
-- !<SceneObject/386c13eb-51d7-4f80-b86f-8912236c183b>
-  PrefabRemaps:
-    []
-  Name: 3.3 - Get resolution without sampling
-  Enabled: false
-  Layers: 1048576
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 0f2f0ce4-b095-4c2d-9e1f-72840b64e2cc
-    - !<own> 8110d9dc-0c8a-4678-96ca-ce6f86c978c9
 - !<ScreenTransform/4153a250-b553-4ebf-88ac-f45c2bdb8810>
   PrefabRemaps:
     []
@@ -374,7 +325,7 @@
   PrefabRemaps:
     []
   Name: 4.2 - Glow Boxes
-  Enabled: false
+  Enabled: true
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -488,8 +439,6 @@
     - !<own> f37cb194-51df-45c3-b9f9-aa8462732ad2
     - !<own> 5eb1645c-21df-41c0-9647-eaa2c474c14f
     - !<own> d0406269-cda8-436d-ae24-3c653851cc76
-    - !<own> 386c13eb-51d7-4f80-b86f-8912236c183b
-    - !<own> dd797d63-616f-4c9e-b4e6-a9594454890e
     - !<own> 315a9442-0eae-41d0-8604-6654aa8b0c85
   Components:
     - !<own> c08cc101-b5b2-4acc-987e-af4992f729c8
@@ -582,7 +531,7 @@
   Name: Image
   Enabled: true
   RenderOrder: 0
-  StretchMode: Fit
+  StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
   MeshShadowMode: None
@@ -597,7 +546,7 @@
   PrefabRemaps:
     []
   Name: Black Background
-  Enabled: false
+  Enabled: true
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: -1.000000}
@@ -683,57 +632,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
-- !<Image/8110d9dc-0c8a-4678-96ca-ce6f86c978c9>
-  PrefabRemaps:
-    []
-  Name: Image
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 014c2cfc-75b7-4f0e-8e3d-610c457db36a
-  FlipX: false
-  FlipY: false
-  Pivot: {x: 0.000000, y: 0.000000}
 - !<ScreenTransform/8c1c381b-0018-43a0-a857-32a752e1ce02>
-  PrefabRemaps:
-    []
-  Name: Screen Transform
-  Enabled: true
-  IsAdvanced: false
-  Constraints:
-    pinToLeft: false
-    pinToTop: false
-    pinToRight: false
-    pinToBottom: false
-    fixedWidth: false
-    fixedHeight: false
-    deactivatedFixedSprite: false
-    deactivatedFixedPivot: false
-  Pivot: {x: 0.000000, y: 0.000000}
-  Transform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  RawMode: true
-  ForceBasic: true
-  Anchor:
-    left: -1.000000
-    bottom: -1.000000
-    right: 1.000000
-    top: 1.000000
-  Offset:
-    left: 0.000000
-    bottom: 0.000000
-    right: 0.000000
-    top: 0.000000
-- !<ScreenTransform/913d12e8-9351-45e4-a790-e298d9e41a92>
   PrefabRemaps:
     []
   Name: Screen Transform
@@ -1025,23 +924,6 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
-- !<Image/be6b8b38-0f22-4d39-b556-bd6f268213f1>
-  PrefabRemaps:
-    []
-  Name: Image
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 4d9b3073-a59b-49e7-972f-5858274c7c2d
-  FlipX: false
-  FlipY: false
-  Pivot: {x: 0.000000, y: 0.000000}
 - !<ScreenTransform/bfa3a3f3-1f4f-4365-91af-01511f47ef4a>
   PrefabRemaps:
     []
@@ -1209,7 +1091,7 @@
 - !<SceneObject/dcd04079-9eec-4093-94f9-10e79511cdfc>
   PrefabRemaps:
     []
-  Name: 2.2 - SampleLod
+  Name: 2.2 - Read from pixel
   Enabled: false
   Layers: 1048576
   LocalTransform:
@@ -1222,22 +1104,6 @@
   Components:
     - !<own> 8c1c381b-0018-43a0-a857-32a752e1ce02
     - !<own> 675b966b-697d-4c73-af7a-16e3206c3ba9
-- !<SceneObject/dd797d63-616f-4c9e-b4e6-a9594454890e>
-  PrefabRemaps:
-    []
-  Name: "3.4 - Read and write to pixel, use screen texture"
-  Enabled: false
-  Layers: 1048576
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 913d12e8-9351-45e4-a790-e298d9e41a92
-    - !<own> be6b8b38-0f22-4d39-b556-bd6f268213f1
 - !<Image/de41aba7-2b4e-40bb-a79a-6e6ac6770ed7>
   PrefabRemaps:
     []
@@ -1259,7 +1125,7 @@
   PrefabRemaps:
     []
   Name: 1.1 - Circle - Using resolution (Easiest to Use)
-  Enabled: true
+  Enabled: false
   Layers: 1048576
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
