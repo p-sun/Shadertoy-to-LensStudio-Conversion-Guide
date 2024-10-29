@@ -5,8 +5,9 @@
     x: 900
     y: 1600
   AntialiasingMode: Disabled
-  DepthBuffer: Auto
+  AntialiasingQuality: Ultra
   MSAAStrategy: OnlyWhenRequired
   ClearColorOption: None
   ClearColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
   InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  DepthBuffer: Auto

@@ -1,9 +1,9 @@
 studioVersion:
   major: 5
-  minor: 0
-  patch: 14
-  build: 24061804
-updateCheckpoint: 37
+  minor: 2
+  patch: 1
+  build: 24102400
+updateCheckpoint: 50
 sceneId: 0a1ccb1a-fe88-4fbb-9883-e3af3c75fd99
 viewConfig:
   simulation:
@@ -13,9 +13,12 @@ viewConfig:
     viewport: Maximized
     output: Live
     stereoOutputEye: Center
+    deviceTypeOverride: Unknown
   cameraType: Front
 metaInfo:
   hints:
+    []
+  tags:
     []
   lensName: Face Lens
   lensDescriptors:
@@ -27,8 +30,8 @@ metaInfo:
     - Mobile
     - Web
   iconHash: ""
+  videoPreviewHash: ""
   fromTemplateName: Snapchat
   fromTemplateUrl: Lens Studio 5.0.14.24061804
   activationCamera: Front
-  hasVideoPreview: false
   sourceMapEnabled: false

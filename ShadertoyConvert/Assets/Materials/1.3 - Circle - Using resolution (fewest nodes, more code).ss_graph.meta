@@ -9,6 +9,6 @@
     {}
   DependentFiles:
     []
-  ImporterSettings: !<GraphImporterSettings/3d455e3c-e039-464d-b1eb-de1a052bee7e>
-    NGSSystemHash: 9090547b79c53984a0a60da0e89379a3
+  ImporterSettings: !<AssetImporterSettings/3d455e3c-e039-464d-b1eb-de1a052bee7e>
+    {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000

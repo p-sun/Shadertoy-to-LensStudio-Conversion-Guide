@@ -82,6 +82,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenRegionComponent/0a10bfc7-fdcd-4c84-a428-cb63776f76cd>
   PrefabRemaps:
     []
@@ -122,6 +123,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/14f9f53e-9d7f-4b21-9052-9f8978a4859c>
   PrefabRemaps:
     []
@@ -237,6 +239,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenRegionComponent/30e05fd5-12c5-470f-b26a-92910cf536ad>
   PrefabRemaps:
     []
@@ -321,12 +324,14 @@
   Near: 1.000000
   Far: 200.000000
   Fov: 63.541000
-  ClearColor:
-    mode: None
-    color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-  ClearDepth:
-    mode: Custom
-    value: 1.000000
+  ClearColor: !<CameraClearColor/00000000-0000-0000-0000-000000000000>
+    Mode: None
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  ClearDepth: !<CameraClearDepth/00000000-0000-0000-0000-000000000000>
+    Mode: Value
+    Value: 1.000000
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
   Aspect: 1.000000
   CameraType: Orthographic
   DepthMode: Regular
@@ -336,7 +341,6 @@
   RenderTarget: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
   DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/4153a250-b553-4ebf-88ac-f45c2bdb8810>
   PrefabRemaps:
@@ -472,6 +476,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/5ac60ecb-bb01-45e0-bc32-417692cf8ee4>
   PrefabRemaps:
     []
@@ -592,6 +597,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/6b2c5127-a4e3-4b3f-aa6f-7830e83c27a1>
   PrefabRemaps:
     []
@@ -625,6 +631,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/74c1b302-8a77-4ea7-a2cb-109648f0b033>
   PrefabRemaps:
     []
@@ -682,6 +689,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/8c1c381b-0018-43a0-a857-32a752e1ce02>
   PrefabRemaps:
     []
@@ -814,6 +822,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenRegionComponent/9e892bef-0d65-4500-9aef-a6892dcbaceb>
   PrefabRemaps:
     []
@@ -871,6 +880,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Image/a121e818-da17-41b7-985e-f80568889b66>
   PrefabRemaps:
     []
@@ -888,6 +898,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/afeefd9d-b152-43d0-906f-e6564f438241>
   PrefabRemaps:
     []
@@ -990,6 +1001,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/bfa3a3f3-1f4f-4365-91af-01511f47ef4a>
   PrefabRemaps:
     []
@@ -1155,6 +1167,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/dcd04079-9eec-4093-94f9-10e79511cdfc>
   PrefabRemaps:
     []
@@ -1188,6 +1201,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/e5b7162b-b57a-431b-b9ef-2f14ec131365>
   PrefabRemaps:
     []
@@ -1253,6 +1267,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Image/f2544255-75a4-44c8-ab45-fb970883868e>
   PrefabRemaps:
     []
@@ -1270,6 +1285,7 @@
   FlipX: false
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/f37cb194-51df-45c3-b9f9-aa8462732ad2>
   PrefabRemaps:
     []
@@ -1298,12 +1314,14 @@
   Near: -1.000000
   Far: 200.000000
   Fov: 63.541019
-  ClearColor:
-    mode: None
-    color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-  ClearDepth:
-    mode: Custom
-    value: 1.000000
+  ClearColor: !<CameraClearColor/00000000-0000-0000-0000-000000000000>
+    Mode: None
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  ClearDepth: !<CameraClearDepth/00000000-0000-0000-0000-000000000000>
+    Mode: Value
+    Value: 1.000000
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
   Aspect: 1.000000
   CameraType: Orthographic
   DepthMode: Regular
@@ -1313,7 +1331,6 @@
   RenderTarget: !<reference> 7fe81812-781c-4d3e-9ada-5ef594e392b0
   DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/fbbe5fe3-2e2b-42a7-b95c-6e50f69ade23>
   PrefabRemaps:
