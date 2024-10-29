@@ -180,21 +180,26 @@ vec4 pixelColor = texture(iChannel0, uvToRead);
 ```
 
 To set this up in Lens Studio:
-1. Create a new Render Target, rename it `Feedback Render Target`. Create a new Orthographic Camera, set it to another layer. Set the camera to `Feedback Render Target`.
+1. Create a new Render Target, and name it `Feedback Render Target`, and set it to get its texture from the Render Target your shader is outputting to.
+   
+   ![Screenshot 2024-10-29 at 2 44 27 PM](https://github.com/user-attachments/assets/cf3944c0-247f-418c-afe2-1e1c6ecf3d06)
 
-![image](https://github.com/user-attachments/assets/702d5840-6640-4a15-b080-c8c7593a85d4)
+3. Create a new empty Orthographic Camera, set it to a different layer (e.g. "feedback a"). Set it to output to `Feedback Render Target`.
 
-3. In the Code Node, we declare `iChannel0`.
+   ![Screenshot 2024-10-29 at 2 37 16 PM](https://github.com/user-attachments/assets/21039341-d975-40c2-834c-a7e27fb1cb09)
+
+5. In the Code Node, we declare `iChannel0`.
 ```glsl
 input_texture_2d iChannel0;
 ```
+
 4. In the Shader Graph, we add a `Texture 2D Object Parameter` node, and set it as the input of `iChannel0` in the Code Node, and set the Title to `Feedback Buffer`.
+  
+   ![image](https://github.com/user-attachments/assets/a00f4b3d-31b6-482a-91d3-0d2fd35e4249)
 
-![image](https://github.com/user-attachments/assets/a00f4b3d-31b6-482a-91d3-0d2fd35e4249)
-
-5. In the Material for the shader, we set `Feedback Buffer` to `Feedback Render Target`.
-
-![image](https://github.com/user-attachments/assets/eab91d64-0d54-48f8-ae54-f90564e82941)
+7. In the Material for the shader, we set `Feedback Buffer` to `Feedback Render Target`.
+  
+   ![image](https://github.com/user-attachments/assets/eab91d64-0d54-48f8-ae54-f90564e82941)
 
 ### Important Differences when Reading/Writing to Pixels
 
