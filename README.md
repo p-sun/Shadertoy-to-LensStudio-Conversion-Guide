@@ -13,7 +13,7 @@ Paste shader code from Shadertoy into the above link, and paste it into a Code N
 # Shadertoy Conversions
 ## Basic Setup - iResolution / fragCoord / uv
 
-In Shadertoy, our main function looks like this.
+In [this Shadertoy](https://www.shadertoy.com/view/4flyRS) of a blue circle at half the height of the screen, our main function looks like this.
 ```glsl
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
@@ -26,6 +26,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     }
 }
 ```
+<img width="400" alt="Screenshot 2024-10-29 at 11 38 01 AM" src="https://github.com/user-attachments/assets/a598f720-098b-493a-9e4b-0e403e2ed9c6">
 
 To set that up for Lens Studio, see "1.1 - Circle - Using resolution" in this project.
 1. Make a new Screen Image. In the Inspector Panel for the Screen Image, set `Stretch Mode` to `Stretch`.
@@ -34,7 +35,7 @@ To set that up for Lens Studio, see "1.1 - Circle - Using resolution" in this pr
 
 <img src="https://github.com/user-attachments/assets/9ca50187-c3bd-465b-9860-1877520ae126" width="600">
 
-3. Convert the Shadertoy code into [Shadertoy to Code Node (Improved!)](https://codepen.io/PaigeSun/full/ExBYPVQ). In the Shader Graph in Lens Studio, paste that code into the Code Node.
+3. Convert the Shadertoy code into Code Node code using [Shadertoy to Code Node (Improved!)](https://codepen.io/PaigeSun/full/ExBYPVQ). In the Shader Graph in Lens Studio, paste that code into the Code Node.
 
 ```glsl
 // The shader output color
@@ -118,18 +119,29 @@ fragCoord     0.5 1.5 2.5 3.5      |     fragCoord     0.5 1.5 2.5
 uv            1/8 3/8 5/8 7/8      |     uv            1/6 3/6 5/6
 ```
 
+Here are two useful functions to convert between uv and pixel coordinates.
+```glsl
+vec2 uvToPixelCoords(vec2 uv) {
+	return vec2(floor(uv * iResolution.xy));
+}
+
+vec2 pixelCoordsToUV(vec2 pixelCoords) {
+	return (pixelCoords + 0.5) / iResolution.xy;
+}
+```
+
 ### Read and Write to Pixel Coordinates
 
 In Shadertoy, we use `iChannel0`/`iChannel1`/`iChannel2`/`iChannel3` to insert 2D textures, such as images, videos, or 2D buffers. We use `sample` or `sampleLod` as above to read the color at a position. In Shadertoy, we can pass data from one frame to the next by encoding data as a color on a specific pixel, and reading that pixel on the next frame.
 
-See this repo, see [Shadertoy Example](https://www.shadertoy.com/view/XflczH) or "Read and write to pixel" in this repo for the Lens Studio equivalent.
+For the full code, see [Shadertoy Example](https://www.shadertoy.com/view/XflczH) and "3.4 - Read and write to pixel" for the Lens Studio equivalent.
 
-Write to pixel in Shadertoy and Lens Studio:
+Write to pixel in Shadertoy or Lens Studio:
 ```glsl
-// Draw an green pixel at (30, 30)
+// Step1: Draw an aqua pixel at (30, 30)
 vec2 pixelCoord = uvToPixelCoords(uv);	 
-if (pixelCoord.x == 30.0 && pixelCoord.y == 30.0) {
-    fragColor = vec4(0, 1, 0, 1);
+if (pixelCoord.x == POS.x && pixelCoord.y == POS.y) {
+    fragColor = vec4(0.1, 0.6, 0.4, 0.3);
 }
 ```
 
@@ -157,7 +169,17 @@ void main() {
     vec4 pixelColor = iChannel0.sampleLod(uvToRead, 0.0);
 ```
 
-To set it up in Lens Studio:
+### (Optional) Read and Write to Pixel Coordinates - to and from the same channel
+
+In Shadertoy we may want to write to one buffer, and then use that buffer in the next frame.
+
+In this project, see my conversion of [this shadertoy](https://www.shadertoy.com/view/XflczH) in "3.4 - Read and write to pixel" for the most basic example.
+We know the Shadertoy is writing to and from the same channel, because in the code for "Buffer A"/`iChannel0`, we see that we're reading from `iChannel0`.
+```glsl
+vec4 pixelColor = texture(iChannel0, uvToRead);
+```
+
+To set this up in Lens Studio:
 1. Create a new Render Target, rename it `Feedback Render Target`. Create a new Orthographic Camera, set it to another layer. Set the camera to `Feedback Render Target`.
 
 ![image](https://github.com/user-attachments/assets/702d5840-6640-4a15-b080-c8c7593a85d4)
@@ -242,17 +264,21 @@ vec4 floatToColor(float value) {
 }
 ```
 
-# Included Shaders
+# Included shaders in this repository
 
+### [Plasma Globe on Shadertoy](https://www.shadertoy.com/view/XsjXRm)
 <img src="https://github.com/user-attachments/assets/31b8da85-cbb9-4577-8185-c035225a7ebf" width="300">
 
+### [Galaxy on Shadertoy](https://www.shadertoy.com/view/wsBBWD)
 https://github.com/user-attachments/assets/66ce250f-952f-4315-bcd9-cd2f77ef542a
 
+### [CRT on Shadertoy](https://www.shadertoy.com/view/MtdSWn)
 https://github.com/user-attachments/assets/7dcf4999-4970-4dde-b9c2-c623cbd28f45
 
+### [Ascii on Shadertoy](https://www.shadertoy.com/view/tlfXzB)
 https://github.com/user-attachments/assets/d59f247e-4728-40be-a329-8a4a9d92beb9
 
-# Not Included due to license
+# Unincluded shaders due to license
 Using these strategies, we can even convert [Iq's infamous Rainforest Shader](https://www.shadertoy.com/view/4ttSWf) (top) to run in Lens Studio (bottom).
 
 https://github.com/user-attachments/assets/f157b615-cbd7-41c0-8650-d312fcaca875
