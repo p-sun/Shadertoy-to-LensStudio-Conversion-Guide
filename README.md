@@ -169,9 +169,9 @@ void main() {
     vec4 pixelColor = iChannel0.sampleLod(uvToRead, 0.0);
 ```
 
-### (Optional) Read and Write to Pixel Coordinates - to and from the same channel
+### (Optional) Read and Write to Pixel Coordinates - to and from the same iChannel
 
-In Shadertoy we may want to write to one buffer, and then use that buffer in the next frame.
+In Shadertoy we may want to write to one buffer, and then use that same buffer in the next frame.
 
 In this project, see my conversion of [this shadertoy](https://www.shadertoy.com/view/XflczH) in "3.4 - Read and write to pixel" for the most basic example.
 We know the Shadertoy is writing to and from the same channel, because in the code for "Buffer A"/`iChannel0`, we see that we're reading from `iChannel0`.
