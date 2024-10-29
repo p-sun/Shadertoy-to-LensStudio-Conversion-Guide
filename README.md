@@ -175,7 +175,10 @@ input_texture_2d iChannel0;
 ![image](https://github.com/user-attachments/assets/eab91d64-0d54-48f8-ae54-f90564e82941)
 
 ### Important Differences when Reading/Writing to Pixels
-* Shadertoy buffers can save 32 bit floats on 4 channels for a __total of 128 bits per pixel__. but Lens Studio can only save 8 bit on 4 channels for a __total of 32 bits per pixel__. In Lens Studio, each 8 bit channel only take on 256 different values, from 0.0/255.0, 1.0/255.0, 2.0/255.0 ... 255.0/255.0.
+
+- Important buffer size difference:
+  1) Shadertoy buffers has  __four channels of 32-bit floats, for a total of 128 bits per pixel__.
+  2) Lens Studio has only __four channels of 8-bit floats between 0 and 1, for a total of 32 bits per pixel__. i.e. In Lens Studio, each 8 bit channel only take on 256 different values, from 0.0/255.0, 1.0/255.0, 2.0/255.0 ... 255.0/255.0.
 * If we need to precisely save all 32 bits of a float, in Lens Studio we can pack that into 4 pixels. Set min and max for values specific to your shader.
     ``` glsl
     // Pack a 32-bit signed float into a Lens Studio rgba color.
@@ -247,7 +250,9 @@ https://github.com/user-attachments/assets/66ce250f-952f-4315-bcd9-cd2f77ef542a
 
 https://github.com/user-attachments/assets/7dcf4999-4970-4dde-b9c2-c623cbd28f45
 
-# Not Included
+https://github.com/user-attachments/assets/d59f247e-4728-40be-a329-8a4a9d92beb9
+
+# Not Included due to license
 Using these strategies, we can even convert [Iq's infamous Rainforest Shader](https://www.shadertoy.com/view/4ttSWf) (top) to run in Lens Studio (bottom).
 
 https://github.com/user-attachments/assets/f157b615-cbd7-41c0-8650-d312fcaca875
